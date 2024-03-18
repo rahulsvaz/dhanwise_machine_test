@@ -1,16 +1,13 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
-class FoodItems extends StatelessWidget {
-  const FoodItems({
-    super.key,
-  });
+import 'package:flutter/material.dart';
+
+class RoundedScrollFoodItems extends StatelessWidget {
+  const RoundedScrollFoodItems({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 220,
+    return  SizedBox(
+      height: 180,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 20,
@@ -18,35 +15,30 @@ class FoodItems extends StatelessWidget {
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      color: Colors.redAccent,
+                     
                       borderRadius: BorderRadius.circular(10)),
                   height: 120,
                   width: 100,
                   child: ClipRRect(
                       borderRadius: const BorderRadius.all(
-                        const Radius.circular(10),
+                         Radius.circular(100),
                       ),
                       child: Image.asset(
                         'assets/images/food_image.webp',
                         fit: BoxFit.fill,
                       )),
+
+                      
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  'Restaurant',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const Text(
-                  'Name',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const Text('25-30 mins'),
+
+              const   SizedBox(height: 10,),
+
+              Center(child: const   Text('Name'))
+              
               ],
             ),
           );
